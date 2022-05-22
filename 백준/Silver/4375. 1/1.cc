@@ -21,7 +21,8 @@ int main()
       }
       else
       {
-        el = ((el * 10) % n + (1 % n)) % n;
+        el = el * 10 + 1;
+        el %= n;
         res++;
       }
     }
