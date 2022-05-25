@@ -1,6 +1,5 @@
-#include <bits/stdc++.h>
-
-// g++ -std=c++14 -Wall a.cpp -o test.out
+#include <iostream>
+#include <string>
 
 using namespace std;
 
