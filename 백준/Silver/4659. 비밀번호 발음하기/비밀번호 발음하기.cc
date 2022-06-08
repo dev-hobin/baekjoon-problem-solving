@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <vector>
 
 // g++ -std=c++14 -Wall a.cpp -o test.out
 
@@ -27,7 +29,6 @@ int main()
   
   for(string v : vec)
   {
-    // 모음 포함 여부
     if (v.find('a') == string::npos 
         && v.find('e') == string::npos 
         && v.find('i') == string::npos
@@ -37,7 +38,7 @@ int main()
       cout << "<" + v << ">" << " is not acceptable.\n";
       continue;
     }
-    // 모음이 3개 혹은 자음이 3개 연속으로 오면 안 된다.
+
     bool is_continuous = false;
     for (int i = 0; i < v.length(); i++)
     {
