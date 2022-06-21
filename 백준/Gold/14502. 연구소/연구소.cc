@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int n, m, max_count;
+int n, m;
 int arr[10][10];
 vector<pair<int, int>> vpoint_pairs;
 vector<pair<int,int>> cand;
@@ -45,38 +45,13 @@ int main()
     } 
   }
 
-  bool is_spread = false;
-  for (pair<int, int> pi : vpoint_pairs)
-  {
-    for (int i = 0; i < 4; i++)
-    {
-      int y = pi.first + dy[i];
-      int x = pi.second + dx[i];
-       if (y < 1 || y > n || x < 1 || x > m) continue;
-      if (arr[y][x] == 0) is_spread = true;
-    }
-  }
-
-  if (!is_spread) {
-    int count = 0;
-    for (int i = 1; i <= n; i++)
-    {
-      for (int j = 1; j <= m; j++)
-      {
-        if (arr[i][j] == 0) count++;
-      }
-    }
-    cout << count;
-    return 0;
-  }
-
   vector<bool> checker(cand.size(), false);
   for (int i = 0; i < 3; i++) checker[i] = true;
 
+  int max_count = 0;
   do {
     int count = 0;
     int temp[10][10];
-    
     for (int i = 1; i <= n; i++)
     {
       for (int j = 1; j <= m; j++)
